@@ -15,19 +15,21 @@ import java.util.concurrent.Future;
 @EnableAsync
 public class SpringAsyncApplication implements CommandLineRunner {
 
+
     private final AsyncService asyncService;
 
     public SpringAsyncApplication(AsyncService asyncService) {
         this.asyncService = asyncService;
     }
+
     @Bean
     public TaskExecutor initializeExecutor() {
         return new ThreadPoolTaskExecutor();
     }
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringAsyncApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringAsyncApplication.class, args);
+    }
 
     @Override
     public void run(String... args) throws Exception {

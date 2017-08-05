@@ -35,6 +35,7 @@ public class SpringAsyncApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("running in spring boot app");
         Future<String> result = asyncService.getAsyncResult();
+        asyncService.printAsyncResult();
         System.out.println(result.get());
         System.out.println("Execution complete");
     }

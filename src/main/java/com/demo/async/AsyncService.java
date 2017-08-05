@@ -15,7 +15,14 @@ public class AsyncService {
     @Async
     public Future<String> getAsyncResult() throws InterruptedException {
         //Make the thread sleep for 10 secs
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         return new AsyncResult<String>("Hello World");
+    }
+
+    @Async
+    public void printAsyncResult() throws InterruptedException {
+        //Make the thread sleep for 10 secs
+        Thread.sleep(10000);
+        System.out.println("print hello world");
     }
 }
